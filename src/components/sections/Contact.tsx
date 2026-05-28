@@ -74,16 +74,16 @@ export function Contact() {
         description="Completá el formulario y te respondemos a la brevedad. También podés escribirnos directo por WhatsApp."
       />
 
-      <div className="grid gap-12 lg:grid-cols-5">
-        <motion.aside
+      <div className="mx-auto flex w-full max-w-xl flex-col gap-6">
+        <motion.div
           initial={reducedMotion ? false : 'hidden'}
           whileInView={reducedMotion ? undefined : 'visible'}
           viewport={viewportOnce}
           variants={fadeUp}
           transition={defaultTransition}
-          className="space-y-6 lg:col-span-2"
+          className="w-full space-y-6"
         >
-          <div className="glass rounded-2xl p-6">
+          <div className="glass w-full rounded-2xl p-6">
             <h3 className="font-display text-lg font-semibold text-[var(--color-fg-dark)] dark:text-[var(--color-fg)]">
               Datos de contacto
             </h3>
@@ -128,7 +128,7 @@ export function Contact() {
             <MessageCircle className="h-5 w-5 text-[var(--color-whatsapp)]" aria-hidden />
             Abrir WhatsApp
           </Button>
-        </motion.aside>
+        </motion.div>
 
         <motion.div
           initial={reducedMotion ? false : 'hidden'}
@@ -136,12 +136,12 @@ export function Contact() {
           viewport={viewportOnce}
           variants={fadeUp}
           transition={{ ...defaultTransition, delay: 0.1 }}
-          className="lg:col-span-3"
+          className="w-full"
         >
           {submitted ? (
             <div
               role="status"
-              className="glass rounded-2xl p-8 text-center"
+              className="glass w-full rounded-2xl p-8 text-center"
             >
               <p className="font-display text-xl font-semibold text-[var(--color-fg-dark)] dark:text-[var(--color-fg)]">
                 ¡Mensaje enviado!
@@ -161,7 +161,7 @@ export function Contact() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="glass space-y-5 rounded-2xl p-6 md:p-8"
+              className="glass w-full space-y-5 rounded-2xl p-6 md:p-8"
               noValidate
             >
               <div>
