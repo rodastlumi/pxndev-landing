@@ -8,12 +8,6 @@ import {
 } from '../../lib/motion'
 import { Button } from '../ui/Button'
 
-const codeSnippet = `const solucion = await pxndev.build({
-  problema: "tu negocio real",
-  plantillas: false,
-  soporteIA: "whatsapp://24-7",
-});`
-
 export function Hero() {
   const reducedMotion = useReducedMotion()
 
@@ -36,7 +30,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={reducedMotion ? false : 'hidden'}
           animate={reducedMotion ? undefined : 'visible'}
@@ -83,28 +77,6 @@ export function Hero() {
               Ver servicios
             </Button>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={reducedMotion ? false : { opacity: 0, x: 32 }}
-          animate={reducedMotion ? undefined : { opacity: 1, x: 0 }}
-          transition={{ ...defaultTransition, delay: 0.2 }}
-          className="relative hidden lg:block"
-          aria-hidden
-        >
-          <div className="glass overflow-hidden rounded-2xl border border-[var(--color-accent)]/20 shadow-2xl shadow-violet-500/10">
-            <div className="flex items-center gap-2 border-b border-[var(--color-border-light)] px-4 py-3 dark:border-[var(--color-border)]">
-              <span className="h-3 w-3 rounded-full bg-red-400/80" />
-              <span className="h-3 w-3 rounded-full bg-amber-400/80" />
-              <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
-              <span className="ml-2 text-xs text-[var(--color-fg-muted)]">
-                pxndev/solucion.ts
-              </span>
-            </div>
-            <pre className="overflow-x-auto p-6 font-mono text-sm leading-relaxed text-[var(--color-accent-cyan)]">
-              <code>{codeSnippet}</code>
-            </pre>
-          </div>
         </motion.div>
       </div>
     </section>
