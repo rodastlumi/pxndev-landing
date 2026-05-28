@@ -4,11 +4,6 @@ export type Theme = 'light' | 'dark'
 
 const STORAGE_KEY = 'pxndev-theme'
 
-function getSystemTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark'
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 function getStoredTheme(): Theme | null {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored === 'light' || stored === 'dark') return stored
@@ -25,7 +20,7 @@ export function useTheme() {
       return 'dark'
     }
     const stored = getStoredTheme()
-    const initial = stored ?? getSystemTheme()
+    const initial = stored ?? 'dark'
     applyTheme(initial)
     return initial
   })

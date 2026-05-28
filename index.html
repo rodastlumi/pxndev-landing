@@ -26,10 +26,8 @@
     <script>
       ;(function () {
         var stored = localStorage.getItem('pxndev-theme')
-        var dark =
-          stored === 'dark' ||
-          (stored !== 'light' &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        // Oscuro por defecto; solo claro si el usuario eligió light
+        var dark = stored !== 'light'
         document.documentElement.classList.toggle('dark', dark)
       })()
     </script>
