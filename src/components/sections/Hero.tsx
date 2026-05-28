@@ -6,6 +6,7 @@ import {
   fadeUp,
   staggerContainer,
 } from '../../lib/motion'
+import { scrollToSection } from '../../lib/scrollToSection'
 import { Button } from '../ui/Button'
 
 export function Hero() {
@@ -73,7 +74,15 @@ export function Hero() {
               Solicitar presupuesto
               <ArrowRight className="h-5 w-5" aria-hidden />
             </Button>
-            <Button href="#servicios" variant="secondary" size="lg">
+            <Button
+              href="#servicios"
+              variant="secondary"
+              size="lg"
+              onClick={(e) => {
+                e.preventDefault()
+                scrollToSection('servicios')
+              }}
+            >
               Ver servicios
             </Button>
           </motion.div>

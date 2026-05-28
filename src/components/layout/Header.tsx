@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { navigation } from '../../data/navigation'
+import { handleSectionLinkClick } from '../../lib/scrollToSection'
 import { useHeaderScrolled } from '../../hooks/useHeaderScrolled'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import type { Theme } from '../../hooks/useTheme'
@@ -94,7 +95,10 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
                 <a
                   href={item.href}
                   className={`block py-2 text-lg ${navLinkClass(item.href)}`}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => {
+                    handleSectionLinkClick(e, item.href)
+                    setMenuOpen(false)
+                  }}
                 >
                   {item.label}
                 </a>
