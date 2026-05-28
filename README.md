@@ -70,6 +70,29 @@ Los contenidos están centralizados en `src/data/`.
 - `prefers-reduced-motion` desactiva animaciones y gradientes animados
 - Contraste pensado para modo oscuro (base) y claro
 
+## Publicar en pxndev.roda.st (Cloudflare Pages)
+
+1. Creá un repo vacío en GitHub (sin README), por ejemplo `pxndev-landing`.
+2. Enlazá y subí el código:
+
+```bash
+git remote add origin https://github.com/TU_USUARIO/pxndev-landing.git
+git push -u origin main
+```
+
+3. En [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+4. Elegí el repo y configurá:
+
+| Campo | Valor |
+|--------|--------|
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+
+5. Tras el primer deploy → **Custom domains** → agregá `pxndev.roda.st`.
+6. Cloudflare crea el CNAME automáticamente si `roda.st` está en la misma cuenta.
+
+Cada `git push` a `main` vuelve a publicar el sitio.
+
 ## Licencia
 
 Proyecto privado — PXNDEV.
