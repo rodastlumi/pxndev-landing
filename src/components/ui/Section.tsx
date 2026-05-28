@@ -3,11 +3,19 @@ import type { ReactNode } from 'react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { defaultTransition, fadeUp, viewportOnce } from '../../lib/motion'
 
+type SectionSpacing = 'default' | 'loose'
+
+const spacingClasses: Record<SectionSpacing, string> = {
+  default: 'pt-14 md:pt-20 pb-0',
+  loose: 'pt-20 md:pt-24 pb-16 md:pb-20',
+}
+
 type SectionProps = {
   id: string
   children: ReactNode
   className?: string
   ariaLabelledby?: string
+  spacing?: SectionSpacing
 }
 
 export function Section({
@@ -15,6 +23,7 @@ export function Section({
   children,
   className = '',
   ariaLabelledby,
+  spacing = 'default',
 }: SectionProps) {
   const reducedMotion = useReducedMotion()
 
@@ -22,7 +31,7 @@ export function Section({
     <section
       id={id}
       aria-labelledby={ariaLabelledby}
-      className={`section-scroll-margin py-20 md:py-28 ${className}`}
+      className={`section-scroll-margin ${spacingClasses[spacing]} ${className}`}
     >
       <motion.div
         initial={reducedMotion ? false : 'hidden'}
@@ -50,7 +59,7 @@ export function SectionHeader({
   description?: string
 }) {
   return (
-    <header className="mb-12 max-w-2xl md:mb-16">
+    <header className="mb-8 max-w-2xl md:mb-10">
       {eyebrow && (
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[var(--color-accent-cyan)]">
           {eyebrow}

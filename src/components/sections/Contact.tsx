@@ -66,7 +66,7 @@ export function Contact() {
     }`
 
   return (
-    <Section id="contacto" ariaLabelledby="contacto-heading">
+    <Section id="contacto" spacing="loose" ariaLabelledby="contacto-heading">
       <SectionHeader
         id="contacto-heading"
         eyebrow="Hablemos"

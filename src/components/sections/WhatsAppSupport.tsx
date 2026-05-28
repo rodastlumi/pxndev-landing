@@ -60,7 +60,7 @@ export function WhatsAppSupport() {
       />
 
       <div className="relative">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-[var(--color-whatsapp)]/15 px-4 py-1.5 text-sm font-semibold text-emerald-600 dark:text-[var(--color-whatsapp)]">
+        <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-[var(--color-whatsapp)]/15 px-4 py-1.5 text-sm font-semibold text-emerald-600 dark:text-[var(--color-whatsapp)]">
           <MessageSquare className="h-4 w-4" aria-hidden />
           Incluido en todos los desarrollos
         </span>
