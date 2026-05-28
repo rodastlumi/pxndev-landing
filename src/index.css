@@ -32,15 +32,21 @@
     }
   }
 
-  body {
-    @apply font-sans antialiased;
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  html:not(.dark) {
     background-color: var(--color-bg-light);
     color: var(--color-fg-dark);
   }
 
-  .dark body {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+  body {
+    @apply font-sans antialiased;
+    background-color: inherit;
+    color: inherit;
+    min-height: 100%;
   }
 
   ::selection {

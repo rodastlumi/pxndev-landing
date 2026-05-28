@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 export type Theme = 'light' | 'dark'
 
-const STORAGE_KEY = 'pxndev-theme'
+const STORAGE_KEY = 'pxndev-theme-v2'
 
 function getStoredTheme(): Theme | null {
   const stored = localStorage.getItem(STORAGE_KEY)
