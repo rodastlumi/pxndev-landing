@@ -2,7 +2,6 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Building2,
   Calendar,
-  Dumbbell,
   Server,
   Smartphone,
   Ticket,
@@ -51,13 +50,6 @@ export const services: Service[] = [
     description:
       'Sistema de reservas y gestión de turnos para clubes deportivos, con disponibilidad en tiempo real.',
     icon: Calendar,
-  },
-  {
-    id: 'gimnasios',
-    title: 'Booking para gimnasios',
-    description:
-      'Reservas de clases, control de membresías y turnos para optimizar la ocupación de tu centro.',
-    icon: Dumbbell,
   },
   {
     id: 'eventos',

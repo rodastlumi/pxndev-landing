@@ -31,11 +31,6 @@ export function Services() {
             title={service.title}
             description={service.description}
             index={index}
-            className={
-              index === services.length - 1
-                ? 'sm:col-span-2 sm:max-w-md sm:justify-self-center lg:col-span-1 lg:max-w-none lg:justify-self-auto'
-                : ''
-            }
           />
         ))}
       </motion.div>
